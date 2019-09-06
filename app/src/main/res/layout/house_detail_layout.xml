@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:src="@drawable/house"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true"
+        android:foreground="@drawable/house_image_overlay"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <ImageView
+        android:tint="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_back_24dp"
+        android:layout_gravity="center_vertical"
+        android:clickable="true"
+        android:padding="@dimen/margin_medium"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:elevation="10dp"
+        />
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="@dimen/margin_medium2x"
+        android:layout_marginBottom="@dimen/margin_medium2x"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:background="@drawable/searchbar_background"
+        android:drawableLeft="@drawable/ic_search_black_24dp"
+        android:drawablePadding="@dimen/margin_small"
+        android:hint="@string/search_bar_hint_text"
+        android:paddingLeft="@dimen/margin_medium"
+        android:paddingRight="@dimen/margin_small"
+        android:elevation="5dp"
+        />
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginRight="@dimen/margin_medium"
+        android:layout_below="@id/top_layout"
+        android:background="@color/colorPrimary"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="@dimen/margin_large"
+        app:cardElevation="30dp">
+
+        <RelativeLayout
+            android:id="@+id/details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/margin_medium"
+
+            >
+
+            <TextView
+                android:id="@+id/tv_house_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_house_price"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize_medium3d"
+                android:textColor="@android:color/black"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:layout_margin="@dimen/margin_medium2x"
+               />
+
+            <TextView
+                android:id="@+id/tv_house_item_Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="West Minster, London"
+                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawableTint="@color/secondaryColor"
+                android:drawablePadding="@dimen/margin_small"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_below="@id/tv_house_price"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_alignLeft="@id/tv_house_price"
+
+                />
+            <TextView
+                android:id="@+id/tv_house_item_square_feet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_house_item_Location"
+                android:drawableLeft="@drawable/ic_house"
+                android:drawableTint="@color/secondaryColor"
+                android:drawablePadding="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:text="@string/house_item_square_feet"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_alignLeft="@id/tv_house_item_Location"
+                android:textSize="@dimen/textsize_medium"
+
+                />
+
+
+
+            <TextView
+                android:id="@+id/tv_house_item_bedroom_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Bedrooms"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_bed"
+                android:drawablePadding="@dimen/margin_small"
+                android:drawableTint="@color/secondaryColor"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_toRightOf="@id/tv_house_item_square_feet"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_alignBaseline="@id/tv_house_item_square_feet"
+                />
+
+            <TextView
+                android:id="@+id/tv_favourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_house_item_square_feet"
+                android:drawableLeft="@drawable/ic_favorite_border_black_24dp"
+                android:drawableTint="@color/secondaryColor"
+                android:drawablePadding="@dimen/margin_small"
+                android:text="@string/tv_favourites"
+                android:textStyle="bold"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_alignLeft="@id/tv_house_item_Location"
+                android:textSize="@dimen/textsize_medium"
+
+                />
+
+
+
+            <TextView
+                android:id="@+id/tv_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_reviews"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_edit_black_24dp"
+                android:drawablePadding="@dimen/margin_small"
+                android:drawableTint="@color/secondaryColor"
+                android:layout_marginBottom="@dimen/margin_medium"
+                android:layout_alignLeft="@id/tv_house_item_bedroom_count"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_alignBaseline="@id/tv_favourite"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_24dp"
+                android:tint="@color/colorPrimary"
+                android:backgroundTint="@color/fabTint"
+                android:elevation="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/margin_medium2x"/>
+
+            <View
+                android:id="@+id/v_seperator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_below="@id/tv_favourite"
+                android:layout_marginTop="@dimen/margin_medium"
+                />
+
+            <TextView
+                android:id="@+id/tv_see_review"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_see_review"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_below="@id/v_seperator"
+                android:layout_margin="@dimen/margin_medium2x"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:text="See Photos"
+                android:textColor="@color/fabTint"
+                android:background="@drawable/rounded_stroked_button_background"
+                android:layout_alignBaseline="@id/tv_see_review"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:foreground="?android:attr/selectableItemBackground"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <org.mmtextview.components.MMTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="စမ်းချောင်းလမ်းသန့် ဗဟိုလမ်းအနီးဂွဈေးအနီး မကြီးကြီးလမ်းအနီးပါကေးခင်း 1 MBR 1 BR AC မီးဖိုကြွေပြားခင်း ပြင်ဆင်ပြီး အဆငါမြင့်ပြင်ဆင်ပြီး တိုက်သစ် ဈေးနီး မှတ်တိုင်အနီး သွားလာရအဆင်ပြေသောနေရာကောင်းတစ်ခုဖြစ်ပါသည်"
+        />
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

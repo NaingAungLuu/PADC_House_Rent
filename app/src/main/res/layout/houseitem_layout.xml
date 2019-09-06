@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_medium"
+    android:layout_height="250dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iv_house"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/house" />
+
+        <RelativeLayout
+            android:id="@+id/layout_detail"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/white"
+            android:layout_below="@id/iv_house">
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_house_item_square_feet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_house"
+                android:drawableTint="@color/secondaryColor"
+                android:drawablePadding="@dimen/margin_small"
+                android:text="@string/house_item_square_feet"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/margin_medium"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:textSize="@dimen/textsize_medium"
+
+                />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_house_item_Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="West Minster, London"
+                android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                android:drawableTint="@color/secondaryColor"
+                android:drawablePadding="@dimen/margin_small"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_above="@id/tv_house_item_square_feet"
+                android:layout_alignLeft="@id/tv_house_item_square_feet"
+
+                />
+
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_house_item_bedroom_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Bedrooms"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_bed"
+                android:drawablePadding="@dimen/margin_small"
+                android:drawableTint="@color/secondaryColor"
+                android:layout_toRightOf="@id/tv_house_item_square_feet"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_alignBaseline="@id/tv_house_item_square_feet"
+                />
+
+
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tv_house_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$ 12,000"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:layout_above="@id/layout_detail"
+            android:layout_margin="@dimen/margin_medium"
+            android:background="@drawable/price_tag_background"/>
+
+
+
+    </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location_24dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:background="?android:attr/selectableItemBackground"
+            android:tint="@color/fabTint"
+            app:layout_anchor="@id/iv_house"
+            android:layout_marginRight="@dimen/margin_medium"
+            app:layout_anchorGravity="bottom|end"
+            app:elevation="@dimen/margin_large"
+            />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PADC House Rent</string>
+    <string name="house_item_square_feet">3200 SquareFeet</string>
+    <string name="search_bar_hint_text">Type your Location , Adress</string>
+    <string name="tv_house_price">$ 120,000</string>
+    <string name="tv_favourites">332 favourites</string>
+    <string name="tv_reviews">23 Reviews</string>
+    <string name="tv_see_review">See Review</string>
+</resources>
