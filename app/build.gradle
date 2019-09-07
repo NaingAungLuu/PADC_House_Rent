@@ -36,11 +36,21 @@ dependencies {
 
     //MMTextView
     implementation 'org.mmtextview:mmtextview:1.5'
-    implementation 'com.jakewharton:butterknife:8.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.1.0'
 
     //GSON
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    //OkHttp
+    implementation 'com.squareup.okhttp3:okhttp:4.1.0'
+
+    //Retrofit | JSON Auto-Conversion
+    implementation 'com.squareup.retrofit2:retrofit:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:8.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

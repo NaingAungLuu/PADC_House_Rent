@@ -66,7 +66,7 @@ public class HttpUrlHouseDataAgentImpl implements HouseDataAgent {
 
             try{
                 //Define URL Connection
-                url = new URL(HouseConstants.BASE_URL+ HouseConstants.GET_EVENTS);
+                url = new URL(HouseConstants.BASE_URL+ HouseConstants.GET_HOUSES);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setReadTimeout(15 * 1000);

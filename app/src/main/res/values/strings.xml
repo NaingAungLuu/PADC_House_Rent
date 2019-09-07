@@ -6,4 +6,6 @@
     <string name="tv_favourites">332 favourites</string>
     <string name="tv_reviews">23 Reviews</string>
     <string name="tv_see_review">See Review</string>
+    <string name="tv_house_details">စမ်းချောင်းလမ်းသန့် ဗဟိုလမ်းအနီးဂွဈေးအနီး မကြီးကြီးလမ်းအနီးပါကေးခင်း 1 MBR 1 BR AC မီးဖိုကြွေပြားခင်း ပြင်ဆင်ပြီး အဆငါမြင့်ပြင်ဆင်ပြီး တိုက်သစ် ဈေးနီး မှတ်တိုင်အနီး သွားလာရအဆင်ပြေသောနေရာကောင်းတစ်ခုဖြစ်ပါသည်</string>
+    <string name="et_search_hint">Type your Address</string>
 </resources>

@@ -26,6 +26,14 @@ public class HouseModelImpl extends BaseModel implements HouseModel {
 
             return objInstance;
     }
+
+
+    @Override
+    public HouseVO getHouseInfo(int houseId)
+    {
+        return houseDataRepository.get(houseId);
+    }
+
     //Network Layer
     @Override
     public void getHouses(final getHousesFromDataLayerDelegate delegate) {

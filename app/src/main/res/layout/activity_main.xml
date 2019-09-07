@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?android:attr/actionBarSize"
             android:orientation="horizontal"
             android:weightSum="10"
             android:gravity="center_vertical"
@@ -28,7 +28,7 @@
         <EditText
             android:layout_width="0dp"
             android:layout_weight="10"
-            android:layout_height="?android:attr/actionBarSize"
+            android:layout_height="match_parent"
             android:layout_marginTop="@dimen/margin_small"
             android:layout_marginBottom="@dimen/margin_small"
             android:layout_marginLeft="@dimen/margin_medium"
@@ -36,12 +36,13 @@
             android:background="@drawable/searchbar_background"
             android:drawableLeft="@drawable/ic_search_black_24dp"
             android:drawablePadding="@dimen/margin_small"
-            android:hint="Type your Location , Adress"
+            android:hint="@string/et_search_hint"
             android:paddingLeft="@dimen/margin_medium"
             android:paddingRight="@dimen/margin_small"
             />
 
         <ImageButton
+            android:id="@+id/ibtn_vertical"
             android:layout_margin="@dimen/margin_small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,6 +52,7 @@
             />
 
             <ImageButton
+                android:id="@+id/ibtn_horizontal"
                 android:layout_weight="0.5"
                 android:layout_margin="@dimen/margin_medium"
                 android:layout_width="wrap_content"

@@ -2,6 +2,8 @@ package com.androboy.padchouserent.data.models;
 
 import com.androboy.padchouserent.network.dataAgents.HouseDataAgent;
 import com.androboy.padchouserent.network.dataAgents.HttpUrlHouseDataAgentImpl;
+import com.androboy.padchouserent.network.dataAgents.OkHttpDataAgentImpl;
+import com.androboy.padchouserent.network.dataAgents.RetrofitDataAgentImpl;
 
 public abstract class BaseModel {
 
@@ -9,6 +11,6 @@ public abstract class BaseModel {
 
     BaseModel()
     {
-        mHouseDataAgent = HttpUrlHouseDataAgentImpl.getObjectInstance();
+        mHouseDataAgent = RetrofitDataAgentImpl.getObjInstance();
     }
 }

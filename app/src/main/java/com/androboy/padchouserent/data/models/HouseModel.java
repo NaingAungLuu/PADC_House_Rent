@@ -7,6 +7,7 @@ import java.util.List;
 public interface HouseModel {
 
     void getHouses(getHousesFromDataLayerDelegate delegate);
+    HouseVO getHouseInfo(int houseId);
 
     interface getHousesFromDataLayerDelegate {
         void onSuccess(List<HouseVO> houses);
