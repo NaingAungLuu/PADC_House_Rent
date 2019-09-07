@@ -4,6 +4,7 @@ import com.androboy.padchouserent.data.vos.HouseVO;
 import com.androboy.padchouserent.network.dataAgents.HouseDataAgent;
 import com.androboy.padchouserent.utils.HouseConstants;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,5 +53,28 @@ public class HouseModelImpl extends BaseModel implements HouseModel {
                 delegate.onFailure(errorMessage);
             }
         });
+    }
+
+    @Override
+    public List<HouseVO> searchHouseById(String key)
+    {
+        List<HouseVO> houseList = new ArrayList<>();
+        List<HouseVO> foundList = new ArrayList<>();
+
+        for(HouseVO house : houseDataRepository.values())
+        {
+            houseList.add(house);
+        }
+        for(HouseVO house : houseList)
+        {
+            System.out.println(house.getHouseName());
+            if(house.getHouseName().contains(key))
+            {
+
+                foundList.add(house);
+            }
+        }
+        return foundList;
+
     }
 }

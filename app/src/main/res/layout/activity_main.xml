@@ -26,6 +26,7 @@
             >
 
         <EditText
+            android:id="@+id/et_search_address"
             android:layout_width="0dp"
             android:layout_weight="10"
             android:layout_height="match_parent"
@@ -34,27 +35,36 @@
             android:layout_marginLeft="@dimen/margin_medium"
             android:layout_marginRight="@dimen/margin_medium"
             android:background="@drawable/searchbar_background"
-            android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:drawablePadding="@dimen/margin_small"
             android:hint="@string/et_search_hint"
             android:paddingLeft="@dimen/margin_medium"
             android:paddingRight="@dimen/margin_small"
             />
 
+            <ImageButton
+                android:id="@+id/ibtn_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:src="@drawable/ic_search_black_24dp"
+                android:background="?android:attr/selectableItemBackground"
+                />
+
         <ImageButton
             android:id="@+id/ibtn_vertical"
-            android:layout_margin="@dimen/margin_small"
             android:layout_width="wrap_content"
+            android:layout_margin="@dimen/margin_small"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:src="@drawable/ic_sort_black_24dp"
             android:background="?android:attr/selectableItemBackground"
             />
 
+
+
             <ImageButton
                 android:id="@+id/ibtn_horizontal"
                 android:layout_weight="0.5"
-                android:layout_margin="@dimen/margin_medium"
+                android:layout_margin="@dimen/margin_small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_sort_by_alpha_black_24dp"

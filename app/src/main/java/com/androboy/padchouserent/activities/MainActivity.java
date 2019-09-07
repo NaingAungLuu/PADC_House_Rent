@@ -1,11 +1,13 @@
 package com.androboy.padchouserent.activities;
 
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -31,13 +33,19 @@ public class MainActivity extends BaseActivity implements HouseItemDelegate {
     @BindView(R.id.ibtn_horizontal)
     ImageButton ibtnHorizontal;
 
+    @BindView(R.id.et_search_address)
+    EditText etSearch;
+
+    @BindView(R.id.ibtn_search)
+    ImageButton ibtnSearch;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        final LinearLayoutManager horizontalLayout =  new LinearLayoutManager(getApplicationContext() , LinearLayoutManager.HORIZONTAL , false);
-        final LinearLayoutManager verticalLayout = new LinearLayoutManager(getApplicationContext() , LinearLayoutManager.VERTICAL , false);
+        final RecyclerView.LayoutManager gridLayout = new GridLayoutManager(getApplicationContext() , 2);
+        final LinearLayoutManager verticalLayout = new LinearLayoutManager(getApplicationContext() , RecyclerView.VERTICAL , false);
 
 
         final HouseListAdapter adapter = new HouseListAdapter(this);
@@ -67,9 +75,18 @@ public class MainActivity extends BaseActivity implements HouseItemDelegate {
         ibtnHorizontal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                rvHouseList.setLayoutManager(horizontalLayout);
+                rvHouseList.setLayoutManager(gridLayout);
             }
         });
+
+        ibtnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String key = etSearch.getText().toString().trim();
+                adapter.setNewData(mhouseModel.searchHouseById(key));
+            }
+        });
+
     }
 
     @Override

@@ -8,6 +8,7 @@ public interface HouseModel {
 
     void getHouses(getHousesFromDataLayerDelegate delegate);
     HouseVO getHouseInfo(int houseId);
+    List<HouseVO> searchHouseById(String key);
 
     interface getHousesFromDataLayerDelegate {
         void onSuccess(List<HouseVO> houses);
