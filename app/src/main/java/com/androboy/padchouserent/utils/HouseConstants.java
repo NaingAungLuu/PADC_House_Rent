@@ -5,7 +5,7 @@ public class HouseConstants {
     public static final String DUMMY_ACCESS_TOKEN = "12345";
 
     //URLs
-    public static final String BASE_URL = "https://2d14f6f1-dfb9-49a0-b4ed-288cb1b0d585.mock.pstmn.io";
+    public static final String BASE_URL = "https://ba610f96-cab6-41ab-94f1-cbc2fca9460b.mock.pstmn.io/";
     public static final String GET_HOUSES = "/getAllHouses";
 
     //PARAMS
@@ -13,5 +13,8 @@ public class HouseConstants {
 
     public static final String FAIL_MESSAGE = "No response from server";
     public static final int CODE_RESPONSE_OK = 200;
+
+    //Database name
+    public static final String HOUSE_DB = "HouseDB";
 }
 

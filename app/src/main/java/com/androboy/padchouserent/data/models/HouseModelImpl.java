@@ -1,7 +1,10 @@
 package com.androboy.padchouserent.data.models;
 
+import android.content.Context;
+
 import com.androboy.padchouserent.data.vos.HouseVO;
 import com.androboy.padchouserent.network.dataAgents.HouseDataAgent;
+import com.androboy.padchouserent.persistence.HouseDatabase;
 import com.androboy.padchouserent.utils.HouseConstants;
 
 import java.util.ArrayList;
@@ -14,18 +17,23 @@ public class HouseModelImpl extends BaseModel implements HouseModel {
     private static HouseModelImpl objInstance;
     private Map<Integer , HouseVO> houseDataRepository;
 
-    private HouseModelImpl()
+    private HouseModelImpl(Context context)
     {
+        super(context);
         houseDataRepository = new HashMap<>();
     }
 
     public static HouseModelImpl getObjectInstance()
     {
         if(objInstance == null){
-            objInstance = new HouseModelImpl();
+            throw new RuntimeException("HouseModel should not be empty");
         }
+        return objInstance;
+    }
 
-            return objInstance;
+    public static void initializeHouseModel(Context context)
+    {
+        objInstance = new HouseModelImpl(context);
     }
 
 
@@ -38,21 +46,33 @@ public class HouseModelImpl extends BaseModel implements HouseModel {
     //Network Layer
     @Override
     public void getHouses(final getHousesFromDataLayerDelegate delegate) {
-        mHouseDataAgent.getHouses(HouseConstants.DUMMY_ACCESS_TOKEN, new HouseDataAgent.GetHousesFromNetworkDelegate() {
-            @Override
-            public void onSuccess(List<HouseVO> houses) {
-                for(HouseVO house : houses)
-                {
-                    houseDataRepository.put(house.getId() , house);
-                }
-                delegate.onSuccess(houses);
-            }
 
-            @Override
-            public void onFailure(String errorMessage) {
-                delegate.onFailure(errorMessage);
-            }
-        });
+        if(!mDatabase.isHouseDataEmpty())
+        {
+            List<HouseVO> houseList = mDatabase.houseDAO().getAllHouses();
+            delegate.onSuccess(houseList);
+        }
+        else{
+
+            mHouseDataAgent.getHouses(HouseConstants.DUMMY_ACCESS_TOKEN, new HouseDataAgent.GetHousesFromNetworkDelegate() {
+                @Override
+                public void onSuccess(List<HouseVO> houses) {
+                    for(HouseVO house : houses)
+                    {
+                        houseDataRepository.put(house.getId() , house);
+                    }
+                    mDatabase.houseDAO().insertHouse(houses);
+                    delegate.onSuccess(houses);
+                }
+
+                @Override
+                public void onFailure(String errorMessage) {
+                    delegate.onFailure(errorMessage);
+                }
+            });
+        }
+
+
     }
 
     @Override
