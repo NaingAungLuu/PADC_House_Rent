@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.androboy.padchouserent.data.vos.HouseVO;
 import com.androboy.padchouserent.delegates.HouseItemDelegate;
@@ -28,11 +27,11 @@ public class HouseListAdapter extends BaseAdapter<HouseItemViewHolder , HouseVO>
         View view;
         if(viewType == 1)
         {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.houseitem_layout, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.house_item_layout, parent, false);
         }
         else
         {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.houseitem_layout, parent, false);
+            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.house_item_layout, parent, false);
 
         }
         return new HouseItemViewHolder(view , mHouseItemDelegate);

@@ -61,19 +61,24 @@ public class HouseModelImpl extends BaseModel implements HouseModel {
         List<HouseVO> houseList = new ArrayList<>();
         List<HouseVO> foundList = new ArrayList<>();
 
+        //Move the houses from the data Repository to a List<HouseVO>
         for(HouseVO house : houseDataRepository.values())
         {
             houseList.add(house);
         }
+
+        System.out.println("Number of houses in the repository = " + houseList.size());
+
+        //Search for the house names that matches the key
         for(HouseVO house : houseList)
         {
-            System.out.println(house.getHouseName());
             if(house.getHouseName().contains(key))
             {
-
+                System.out.println(house.getHouseName());
                 foundList.add(house);
             }
         }
+        System.out.println("Number of houses in the found list = " + foundList.size());
         return foundList;
 
     }

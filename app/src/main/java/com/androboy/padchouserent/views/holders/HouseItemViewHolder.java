@@ -35,6 +35,9 @@ public class HouseItemViewHolder extends BaseViewHolder<HouseVO> {
     @BindView(R.id.iv_item_house)
     ImageView ivHouseImage;
 
+    @BindView(R.id.tv_house_item_Name)
+    TextView tvHouseName;
+
 
 
     public HouseItemViewHolder(@NonNull View itemView , HouseItemDelegate delegate) {
@@ -58,6 +61,7 @@ public class HouseItemViewHolder extends BaseViewHolder<HouseVO> {
                 .into(ivHouseImage);
         tvHousePrice.setText("$ " + mData.getHousePrice());
         tvHouseLocation.setText(mData.getHouseAddress());
+        tvHouseName.setText(mData.getHouseName());
         tvHouseSquareFeet.setText(mData.getHouseWidth() + " Ft");
     }
 }

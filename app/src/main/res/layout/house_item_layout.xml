@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="@dimen/margin_medium"
-    android:layout_height="250dp"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
     app:cardElevation="10dp"
 
@@ -29,7 +29,7 @@
         <RelativeLayout
             android:id="@+id/layout_detail"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:background="@android:color/white"
             android:layout_below="@id/iv_item_house">
 
@@ -42,12 +42,29 @@
                 android:drawablePadding="@dimen/margin_small"
                 android:text="@string/house_item_square_feet"
                 android:textStyle="bold"
-                android:layout_marginTop="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
                 android:layout_marginBottom="@dimen/margin_medium"
                 android:layout_marginRight="@dimen/margin_medium"
+                android:layout_below="@id/tv_house_item_Location"
                 android:layout_alignLeft="@id/tv_house_item_Location"
-                android:layout_alignParentBottom="true"
                 android:textSize="@dimen/textsize_medium"
+
+                />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tv_house_item_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="West Minster, London"
+                android:drawableLeft="@drawable/ic_home_black_24dp"
+                android:drawableTint="@color/secondaryColor"
+                android:drawablePadding="@dimen/margin_small"
+                android:textStyle="bold"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:textSize="@dimen/textsize_medium"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
 
                 />
 
@@ -61,8 +78,9 @@
                 android:drawablePadding="@dimen/margin_small"
                 android:textStyle="bold"
                 android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_small"
                 android:textSize="@dimen/textsize_medium"
-                android:layout_above="@id/tv_house_item_square_feet"
+                android:layout_below="@id/tv_house_item_Name"
                 android:layout_alignParentLeft="true"
 
                 />

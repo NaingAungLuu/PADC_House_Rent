@@ -61,7 +61,7 @@ public class MainActivity extends BaseActivity implements HouseItemDelegate {
 
             @Override
             public void onFailure(String errorMessage) {
-                Toast.makeText(MainActivity.this, "An Error Occured", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, errorMessage, Toast.LENGTH_LONG).show();
             }
         });
 

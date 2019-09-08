@@ -62,6 +62,7 @@ public class RetrofitDataAgentImpl implements HouseDataAgent {
                 }
                 else
                 {
+                    System.out.println(housesResponse.getMessage());
                     delegate.onFailure(housesResponse.getMessage());
                 }
 
